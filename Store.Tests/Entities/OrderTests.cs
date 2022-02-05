@@ -59,4 +59,12 @@ public class OrderTests
         order.AddItem(_product, 0);
         Assert.AreEqual(order.Items.Count, 0);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Dado_um_novo_pedido_valido_seu_total_deve_ser_50() {
+        var order = new Order(_customer, 0, null);
+        order.AddItem(_product, 5);
+        Assert.AreEqual(order.Total(), 50);
+    }
 }
