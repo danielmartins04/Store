@@ -67,4 +67,13 @@ public class OrderTests
         order.AddItem(_product, 5);
         Assert.AreEqual(order.Total(), 50);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Dado_um_desconto_expirado_o_valor_do_pedido_deve_ser_60() {
+        var expiredDiscount = new Discount(10, DateTime.Now.AddDays(-5)); // 0
+        var order = new Order(_customer, 0, expiredDiscount);
+        order.AddItem(_product, 6); // valor do pedido = 60
+        Assert.AreEqual(order.Total(), 60);
+    }
 }
