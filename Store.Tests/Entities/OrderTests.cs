@@ -78,4 +78,12 @@ public class OrderTests : BaseTests
         order.AddItem(_product, 5);
         Assert.AreEqual(order.Total(), 60);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void Dado_um_pedido_sem_cliente_o_mesmo_deve_ser_invalido() 
+    {
+        var order = new Order(null, 10, _discount);
+        Assert.AreEqual(order.Valid, false);
+    }
 }
