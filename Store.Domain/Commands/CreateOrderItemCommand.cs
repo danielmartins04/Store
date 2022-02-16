@@ -4,9 +4,9 @@ using Store.Domain.Commands.Interfaces;
 
 namespace Store.Domain.Commands;
 
-public class CreateOrdemItemCommand : Notifiable, ICommand
+public class CreateOrderItemCommand : Notifiable, ICommand
 {
-    public CreateOrdemItemCommand(Guid product, int quantity) {
+    public CreateOrderItemCommand(Guid product, int quantity) {
         Product = product;
         Quantity = quantity;
     }

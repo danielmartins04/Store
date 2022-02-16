@@ -14,8 +14,8 @@ public class CreateOrderCommandTests {
         command.Customer = "";
         command.Zipcode  = "62270000";
         command.PromoCode = "12345678";
-        command.Items.Add(new CreateOrdemItemCommand(Guid.NewGuid(), 1));
-        command.Items.Add(new CreateOrdemItemCommand(Guid.NewGuid(), 1));
+        command.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
+        command.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
         command.Validate();
 
         Assert.AreEqual(command.Valid, false);
